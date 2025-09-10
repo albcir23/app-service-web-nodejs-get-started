@@ -1,11 +1,8 @@
-const express = require('express');
-const app = express();
+var express = require('express');
+var router = express.Router();
 
-app.get('/', (req, res) => {
+router.get('/', function(req, res) {
   res.status(200).send('Hello World!');
 });
 
-const port = process.env.PORT || 8080;
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
-});
+module.exports = router;
