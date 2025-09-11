@@ -1,15 +1,8 @@
+
 extends layout
 
 block content
   h1= title
   p Welcome to #{title}
-
-octype html
-html
-  head
-    title= title
-  body
-    h1= message
-    form(action="/trigger-error", method="POST")
-      button(type="submit") Genera Errore
-
+  form(action="/trigger-error", method="POST")
+    button(type="submit") Genera Errore
