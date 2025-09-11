@@ -25,6 +25,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
+// 🔥 Route che genera errore intenzionale
+app.post('/trigger-error', function(req, res, next) {
+  var err = new Error("Errore intenzionale generato dall'utente");
+  err.status = 500;
+  next(err);
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
